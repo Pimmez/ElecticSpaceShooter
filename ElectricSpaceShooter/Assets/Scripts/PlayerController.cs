@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 
 	[SerializeField] private float moveSpeed = 250f;
 	[SerializeField] private float tilt;
+	[SerializeField] private GameObject blasterNose;
 
 	private Rigidbody rigid;
 	private float moveHorizontal;
@@ -23,6 +24,11 @@ public class PlayerController : MonoBehaviour {
 	{
 		MoveAround();
 		PlayerBoundary.Instance.BoundaryBox(rigid);
+
+		if(Input.GetKeyDown(KeyCode.Mouse0))
+		{
+			BulletSpawn.Instance.InstantiateBullet(blasterNose.transform.position);
+		}
 	}
 
 	private void MoveAround()
