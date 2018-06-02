@@ -19,11 +19,13 @@ public class BulletSpawn : MonoBehaviour {
 
 	[SerializeField] private float bulletLifeTime;
 	[SerializeField] private GameObject bullet;
+	[SerializeField] private float speed = 10f;
 	private GameObject bulletClone;
 
 	public void InstantiateBullet(Vector3 _playerBlaster)
 	{
-		bulletClone = (GameObject)Instantiate(bullet, _playerBlaster, transform.rotation);
+		bulletClone = Instantiate(bullet, _playerBlaster, bullet.transform.rotation) as GameObject;
+		bulletClone.GetComponent<Rigidbody>().velocity = bullet.transform.forward * speed;
 		DeleteBullet(bulletLifeTime);
 	}
 

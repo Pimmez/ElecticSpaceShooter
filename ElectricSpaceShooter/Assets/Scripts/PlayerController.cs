@@ -15,20 +15,27 @@ public class PlayerController : MonoBehaviour {
 	private float moveVertical;
 	private Vector3 movement;
 
+	private float nextFire;
+	[SerializeField] private float fireRate;
+
 	private void Awake()
 	{
 		rigid = GetComponent<Rigidbody>();
+	}
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > nextFire)
+		{
+			nextFire = Time.time + fireRate;
+			BulletSpawn.Instance.InstantiateBullet(blasterNose.transform.position);
+		}
 	}
 
 	private void FixedUpdate()
 	{
 		MoveAround();
 		PlayerBoundary.Instance.BoundaryBox(rigid);
-
-		if(Input.GetKeyDown(KeyCode.Mouse0))
-		{
-			BulletSpawn.Instance.InstantiateBullet(blasterNose.transform.position);
-		}
 	}
 
 	private void MoveAround()

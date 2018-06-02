@@ -400,9 +400,51 @@ Prefab:
       propertyPath: bulletLifeTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114371610708567846, guid: 95a856c4e2aa1a044bf6092c07a9bfbd,
+        type: 2}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114321017205062744, guid: 95a856c4e2aa1a044bf6092c07a9bfbd,
+        type: 2}
+      propertyPath: fireRate
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95a856c4e2aa1a044bf6092c07a9bfbd, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2069400213 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1258001211548230, guid: 190a834e7ccda6f408dc7bacc7eed8ba,
+    type: 2}
+  m_PrefabInternal: {fileID: 2111660313}
+--- !u!114 &2069400214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2069400213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f421182c55e25ce4e91fcc90d5aef790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroids:
+  - {fileID: 1073605529049000, guid: 525edb526a9be1e49a6d57c427c7e346, type: 2}
+  rotateAmount: 5
+--- !u!114 &2069400217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2069400213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2016a1d0f98e64799ad42d0d735aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 198854978695055896, guid: 6449561e089fd884aa45f9e9af901ead, type: 2}
 --- !u!1001 &2111660313
 Prefab:
   m_ObjectHideFlags: 0
@@ -412,15 +454,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4506637976160108, guid: 190a834e7ccda6f408dc7bacc7eed8ba, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.80770653
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4506637976160108, guid: 190a834e7ccda6f408dc7bacc7eed8ba, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.033043
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4506637976160108, guid: 190a834e7ccda6f408dc7bacc7eed8ba, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3.0857844
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4506637976160108, guid: 190a834e7ccda6f408dc7bacc7eed8ba, type: 2}
       propertyPath: m_LocalRotation.x
