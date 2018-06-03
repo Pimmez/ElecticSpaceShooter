@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114371610708567846}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,6 +144,7 @@ MonoBehaviour:
   moveSpeed: 400
   tilt: 3
   blasterNose: {fileID: 1617433664847926}
+  fireRate: 0
 --- !u!114 &114371610708567846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,7 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44eed2a0bdfbfd045a5fc1b8aef9f3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletLifeTime: 0
   bullet: {fileID: 1713459758336776, guid: 63866289509f11a43af5c3c5a3816a3b, type: 2}
+  speed: 10
 --- !u!136 &136738508575519902
 CapsuleCollider:
   m_ObjectHideFlags: 1

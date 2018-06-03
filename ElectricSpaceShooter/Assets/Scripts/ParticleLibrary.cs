@@ -19,13 +19,14 @@ public class ParticleLibrary : MonoBehaviour {
 	}
 	#endregion
 
-	[SerializeField] private List<ParticleSystem> particles = new List<ParticleSystem>();
+	[SerializeField] private List<GameObject> particles = new List<GameObject>();
 
-	public void SpawnParticle(Vector3 _position)
+	public void SpawnParticle(Vector3 _position, int _particleCounter)
 	{
 		for (int i = 0; i < particles.Count; i++)
 		{
-			Instantiate(particles[i], _position, particles[i].transform.rotation);
+			GameObject _particleClone = Instantiate(particles[_particleCounter], _position, particles[i].transform.rotation);
+			Destroy(_particleClone, 1f);
 		}
 	}
 }
