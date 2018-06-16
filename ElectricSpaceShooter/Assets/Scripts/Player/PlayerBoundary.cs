@@ -18,6 +18,11 @@ public class PlayerBoundary : MonoBehaviour
 	}
 	#endregion
 
+	public float XMin { get { return xMin; } }
+	public float XMax { get { return xMax; } }
+	public float ZMin { get { return zMin; } }
+	public float ZMax { get { return zMax; } }
+
 	[SerializeField] private float xMin, xMax, zMin, zMax;
 
 	public void BoundaryBox(Rigidbody rigid)

@@ -6,7 +6,6 @@ public class Progression : MonoBehaviour
 {
 	public static Action<int> increaseScoreUiEvent;
 
-	[SerializeField] private GameObject playerPrefab;
 	private int totalScore;
 
 	private void UpdateScore(int _score)
@@ -39,10 +38,12 @@ public class Progression : MonoBehaviour
 	private void OnEnable()
 	{
 		Asteroid.scoreIncreaseEvent += UpdateScore;
+		EnemyMover.enemyDiedEvent += UpdateScore;
 	}
 
 	private void OnDisable()
 	{
 		Asteroid.scoreIncreaseEvent -= UpdateScore;
+		EnemyMover.enemyDiedEvent -= UpdateScore;
 	}
 }

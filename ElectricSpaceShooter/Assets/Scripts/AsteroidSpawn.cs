@@ -25,9 +25,10 @@ public class AsteroidSpawn : MonoBehaviour
 		{
 			for (int i = 0; i < asteroids.Count; i++)
 			{
+				GameObject asteroid = asteroids[Random.Range(0, asteroids.Count)];
 				Vector3 _spawnPosition = new Vector3(UnityEngine.Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 				Quaternion _spawnRotation = new Quaternion();
-				Instantiate(asteroids[i].gameObject, _spawnPosition, _spawnRotation);
+				Instantiate(asteroid.gameObject, _spawnPosition, _spawnRotation);
 				yield return new WaitForSeconds(spawnWait);
 			}
 			yield return new WaitForSeconds(waveWait);

@@ -64,5 +64,27 @@ public class PlayerController : MonoBehaviour
 				playerDiedEvent();
 			}
 		}
+		if (other.gameObject.tag == Tags.ENEMYBULLET)
+		{
+			Destroy(gameObject);
+			ParticleLibrary.Instance.SpawnParticle(transform.position, 1);
+			Destroy(other.gameObject);
+
+			if (playerDiedEvent != null)
+			{
+				playerDiedEvent();
+			}
+		}
+		if (other.gameObject.tag == Tags.ENEMY)
+		{
+			Destroy(gameObject);
+			ParticleLibrary.Instance.SpawnParticle(transform.position, 1);
+			Destroy(other.gameObject);
+
+			if (playerDiedEvent != null)
+			{
+				playerDiedEvent();
+			}
+		}
 	}
 }
