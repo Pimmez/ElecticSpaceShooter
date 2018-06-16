@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleLibrary : MonoBehaviour {
+public class ParticleLibrary : MonoBehaviour
+{
 
 	public static ParticleLibrary Instance { get { return GetInstance(); } }
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class PlayerBoundary : MonoBehaviour {
+public class PlayerBoundary : MonoBehaviour
+{
 
 	public static PlayerBoundary Instance { get { return GetInstance(); } }
 

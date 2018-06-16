@@ -2,8 +2,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class AsteroidSpawn : MonoBehaviour {
-
+public class AsteroidSpawn : MonoBehaviour
+{
 	[SerializeField] private List<GameObject> asteroids = new List<GameObject>();
 	[SerializeField] private float rotateAmount;
 	[SerializeField] private Vector3 spawnValues;
@@ -25,12 +25,17 @@ public class AsteroidSpawn : MonoBehaviour {
 		{
 			for (int i = 0; i < asteroids.Count; i++)
 			{
-				Vector3 _spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+				Vector3 _spawnPosition = new Vector3(UnityEngine.Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 				Quaternion _spawnRotation = new Quaternion();
 				Instantiate(asteroids[i].gameObject, _spawnPosition, _spawnRotation);
 				yield return new WaitForSeconds(spawnWait);
 			}
 			yield return new WaitForSeconds(waveWait);
+
+			if(GameOverUI.Instance.IsGameOver == true)
+			{
+				break;
+			}
 		}
 	}
 }

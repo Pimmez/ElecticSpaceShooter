@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DeadTrigger
   - Bullet
+  - Asteroid
   layers:
   - Default
   - TransparentFX

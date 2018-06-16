@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
+using System;
 
-public class Asteroid : MonoBehaviour {
+public class Asteroid : MonoBehaviour
+{
+	public static Action<int> scoreIncreaseEvent;
 
 	[SerializeField] private float rotateAmount;
 	[SerializeField] private float moveSpeed;
-
-	
+	[SerializeField] private int score;
 
 	private Rigidbody rigid;
 
 	void Start()
 	{
 		rigid = GetComponent<Rigidbody>();
-		rigid.angularVelocity = Random.insideUnitSphere * rotateAmount;
+		rigid.angularVelocity = UnityEngine.Random.insideUnitSphere * rotateAmount;
 		rigid.velocity = -transform.forward * moveSpeed;
 	}
 
@@ -27,12 +29,10 @@ public class Asteroid : MonoBehaviour {
 			Destroy(gameObject);
 			ParticleLibrary.Instance.SpawnParticle(transform.position, 0);
 			Destroy(other.gameObject);
-		}
-		if (other.gameObject.tag == Tags.PLAYER)
-		{
-			Destroy(gameObject);
-			ParticleLibrary.Instance.SpawnParticle(transform.position, 1);
-			Destroy(other.gameObject);
+			if(scoreIncreaseEvent != null)
+			{
+				scoreIncreaseEvent(score);
+			}
 		}
 	}
 }

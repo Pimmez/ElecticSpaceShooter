@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class BulletSpawn : MonoBehaviour {
+public class BulletSpawn : MonoBehaviour
+{
 
 	public static BulletSpawn Instance { get { return GetInstance(); } }
 
