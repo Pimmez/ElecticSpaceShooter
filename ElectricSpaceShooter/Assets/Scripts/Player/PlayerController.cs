@@ -18,8 +18,9 @@ public class PlayerController : MonoBehaviour
 	private float moveHorizontal;
 	private float moveVertical;
 	private Vector3 movement;
-
 	private float nextFire;
+
+	
 
 	private void Awake()
 	{
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
 		{
 			nextFire = Time.time + fireRate;
 			BulletSpawn.Instance.InstantiateBullet(blasterNose.transform.position);
+			AudioManager.Instance.PlayAudio(0);
 		}
 	}
 
@@ -59,6 +61,9 @@ public class PlayerController : MonoBehaviour
 			ParticleLibrary.Instance.SpawnParticle(transform.position, 1);
 			Destroy(other.gameObject);
 
+			AudioManager.Instance.PlayAudio(4);
+			AudioManager.Instance.PlayAudio(3);
+
 			if (playerDiedEvent != null)
 			{
 				playerDiedEvent();
@@ -70,6 +75,8 @@ public class PlayerController : MonoBehaviour
 			ParticleLibrary.Instance.SpawnParticle(transform.position, 1);
 			Destroy(other.gameObject);
 
+			AudioManager.Instance.PlayAudio(3);
+
 			if (playerDiedEvent != null)
 			{
 				playerDiedEvent();
@@ -80,6 +87,10 @@ public class PlayerController : MonoBehaviour
 			Destroy(gameObject);
 			ParticleLibrary.Instance.SpawnParticle(transform.position, 1);
 			Destroy(other.gameObject);
+
+			AudioManager.Instance.PlayAudio(2);
+			AudioManager.Instance.PlayAudio(3);
+
 
 			if (playerDiedEvent != null)
 			{

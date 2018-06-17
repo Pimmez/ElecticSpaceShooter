@@ -25,7 +25,7 @@ public class BulletSpawn : MonoBehaviour
 	public void InstantiateBullet(Vector3 _playerBlaster)
 	{
 		bulletClone = Instantiate(bullet, _playerBlaster, bullet.transform.rotation) as GameObject;
-		bulletClone.GetComponent<Rigidbody>().velocity = bullet.transform.forward * speed * Time.deltaTime;
+		bulletClone.GetComponent<Rigidbody>().velocity = bullet.transform.forward * speed;
 		DeleteBullet(bulletLifeTime);
 	}
 

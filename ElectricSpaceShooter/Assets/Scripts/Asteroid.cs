@@ -29,7 +29,10 @@ public class Asteroid : MonoBehaviour
 			Destroy(gameObject);
 			ParticleLibrary.Instance.SpawnParticle(transform.position, 0);
 			Destroy(other.gameObject);
-			if(scoreIncreaseEvent != null)
+
+			AudioManager.Instance.PlayAudio(4);
+
+			if (scoreIncreaseEvent != null)
 			{
 				scoreIncreaseEvent(score);
 			}

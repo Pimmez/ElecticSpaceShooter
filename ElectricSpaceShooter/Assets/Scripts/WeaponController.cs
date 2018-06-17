@@ -19,8 +19,9 @@ public class WeaponController : MonoBehaviour
 	private void Fire()
 	{
 		enemyBulletClone = Instantiate(enemyBullet, muzzle.position, muzzle.rotation);
-		enemyBulletClone.GetComponent<Rigidbody>().velocity -= enemyBullet.transform.forward * speed * Time.deltaTime;
+		enemyBulletClone.GetComponent<Rigidbody>().velocity -= enemyBullet.transform.forward * speed;
 		DeleteBullet(EnemyBulletLifeTime);
+		AudioManager.Instance.PlayAudio(1);
 	}
 
 	private void DeleteBullet(float _bulletLifeTime)

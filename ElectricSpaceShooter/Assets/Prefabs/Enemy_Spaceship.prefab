@@ -189,10 +189,10 @@ MonoBehaviour:
   enemyBullet: {fileID: 1713459758336776, guid: 3c26b9fb1ac02c54ca1cec15adcc0ff0,
     type: 2}
   muzzle: {fileID: 4341320186339974}
-  fireRate: 1
+  fireRate: 2
   delay: 1
   EnemyBulletLifeTime: 3
-  speed: 800
+  speed: 15
 --- !u!114 &114661982099001528
 MonoBehaviour:
   m_ObjectHideFlags: 1

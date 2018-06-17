@@ -24,6 +24,8 @@ public class GameOverUI : MonoBehaviour
 
 	[SerializeField] private GameObject gameOver;
 	[SerializeField] private GameObject restart;
+	[SerializeField] private GameObject highscore;
+	[SerializeField] private GameObject quit;
 
 	private bool isGameOver;
 
@@ -39,6 +41,8 @@ public class GameOverUI : MonoBehaviour
 		{
 			gameOver.SetActive(true);
 			restart.SetActive(true);
+			highscore.SetActive(true);
+			quit.SetActive(true);
 		}
 	}
 

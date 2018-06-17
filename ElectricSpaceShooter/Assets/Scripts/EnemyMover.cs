@@ -24,6 +24,9 @@ public class EnemyMover : MonoBehaviour
 			Destroy(gameObject);
 			ParticleLibrary.Instance.SpawnParticle(transform.position, 0);
 			Destroy(other.gameObject);
+
+			AudioManager.Instance.PlayAudio(2);
+
 			if (enemyDiedEvent != null)
 			{
 				enemyDiedEvent(score);
