@@ -2,35 +2,32 @@
 
 public class WeaponController : MonoBehaviour
 { 
-	[SerializeField] private GameObject shot;
-	[SerializeField] private Transform shotSpawn;
+	[SerializeField] private GameObject enemyBullet;
+	[SerializeField] private Transform muzzle;
 	[SerializeField] private float fireRate;
 	[SerializeField] private float delay;
-
 	[SerializeField] private float EnemyBulletLifeTime;
 	[SerializeField] private float speed = 10f;
+
 	private GameObject enemyBulletClone;
 
-	void Start()
+	private void Start()
 	{
 		InvokeRepeating("Fire", delay, fireRate);
 	}
 
-	void Fire()
+	private void Fire()
 	{
-		enemyBulletClone = Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-		enemyBulletClone.GetComponent<Rigidbody>().velocity -= shot.transform.forward * speed;
+		enemyBulletClone = Instantiate(enemyBullet, muzzle.position, muzzle.rotation);
+		enemyBulletClone.GetComponent<Rigidbody>().velocity -= enemyBullet.transform.forward * speed * Time.deltaTime;
 		DeleteBullet(EnemyBulletLifeTime);
-
-
 	}
 
 	private void DeleteBullet(float _bulletLifeTime)
 	{
-		if (shot != null)
+		if (enemyBullet != null)
 		{
 			Destroy(enemyBulletClone, _bulletLifeTime);
 		}
 	}
-
 }

@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ParticleLibrary : MonoBehaviour
 {
-
 	public static ParticleLibrary Instance { get { return GetInstance(); } }
 
 	#region Singleton

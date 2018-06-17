@@ -20,6 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4506637976160108}
   - component: {fileID: 114563019600292294}
+  - component: {fileID: 114776792163991076}
+  - component: {fileID: 114204699899065044}
+  - component: {fileID: 114627405255767120}
   m_Layer: 0
   m_Name: LevelProgress
   m_TagString: Untagged
@@ -34,12 +37,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1258001211548230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.80770653, y: -3.033043, z: -3.0857844}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114204699899065044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1258001211548230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2016a1d0f98e64799ad42d0d735aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 1324221800164838, guid: 6449561e089fd884aa45f9e9af901ead, type: 2}
+  - {fileID: 1324221800164838, guid: f37cff766248a3c4e842dbd5669d5fc6, type: 2}
 --- !u!114 &114563019600292294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,3 +72,35 @@ MonoBehaviour:
   xMax: 5
   zMin: -7
   zMax: 7
+--- !u!114 &114627405255767120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1258001211548230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9ab5b480f46ea4ca00292952500592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114776792163991076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1258001211548230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f421182c55e25ce4e91fcc90d5aef790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroids:
+  - {fileID: 1073605529049000, guid: 525edb526a9be1e49a6d57c427c7e346, type: 2}
+  - {fileID: 1073605529049000, guid: f6ad755556a685f43acad92f4791b657, type: 2}
+  - {fileID: 1073605529049000, guid: 4bb6721fba5236d48a84004a6d538ce4, type: 2}
+  - {fileID: 1214393201944558, guid: cf965e6a4f3ccae498572dd5dba1b0ab, type: 2}
+  rotateAmount: 5
+  spawnValues: {x: 6, y: 0, z: 16}
+  spawnWait: 0.5
+  startWait: 1
+  waveWait: 2

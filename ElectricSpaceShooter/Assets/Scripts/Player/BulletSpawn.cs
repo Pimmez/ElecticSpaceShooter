@@ -2,7 +2,6 @@
 
 public class BulletSpawn : MonoBehaviour
 {
-
 	public static BulletSpawn Instance { get { return GetInstance(); } }
 
 	#region Singleton
@@ -26,7 +25,7 @@ public class BulletSpawn : MonoBehaviour
 	public void InstantiateBullet(Vector3 _playerBlaster)
 	{
 		bulletClone = Instantiate(bullet, _playerBlaster, bullet.transform.rotation) as GameObject;
-		bulletClone.GetComponent<Rigidbody>().velocity = bullet.transform.forward * speed;
+		bulletClone.GetComponent<Rigidbody>().velocity = bullet.transform.forward * speed * Time.deltaTime;
 		DeleteBullet(bulletLifeTime);
 	}
 

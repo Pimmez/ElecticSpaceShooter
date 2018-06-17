@@ -27,6 +27,10 @@ public class Progression : MonoBehaviour
 				ResetAll();
 			}
 		}
+		if(Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
 	}
 
 	private void ResetAll()
